@@ -3,8 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import MyPlugin from './sss'
+
+
 
 Vue.config.productionTip = false
+Vue.use(MyPlugin)
 
 /* eslint-disable no-new */
 new Vue({
@@ -13,3 +17,4 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+

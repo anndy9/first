@@ -90,6 +90,31 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  mounted: function () {
+    function Point(x, y) {
+      this.x = x;
+      this.y = y;
+    }
+
+    Point.prototype.toString = function () {
+      return '(' + this.x + ', ' + this.y + ')';
+    };
+
+    var p = new Point(1, 2);
+
+    console.log(p.toString())
+    
+    this.$myMethod('真的成功了啊');
+    let suerName = 'xi rong'
+    for (let textData of suerName) {
+      if(textData == ' '){
+        console.log('发现空的')
+        textData = '';
+      }
+    }
+    console.log(suerName)
+    console.log('结束')
   }
 }
 </script>
