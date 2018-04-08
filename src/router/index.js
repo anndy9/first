@@ -25,7 +25,7 @@ var router = new Router({
   ]
 }) 
 router.beforeEach((to, from, next) => {
-  let login = JSON.parse(sessionStorage.getItem('suer'));
+  let login = JSON.parse(sessionStorage.getItem('user'));
   if(!login){
     if(to.name == 'login'){
       next()

@@ -22,12 +22,18 @@ export default {
         }
     },
     methods:{
-        login:function(){
+        login: function(){
             let user = {
                 name:'xirong',
                 age:'26'
             }
-            sessionStorage.setItem('suer',JSON.stringify(user))
+            sessionStorage.setItem('user',JSON.stringify(user))
+            if(true){
+                this.$router.push('/home')
+            }
+        },
+        sss: function(val){
+            alert(val)
         }
     }
 
