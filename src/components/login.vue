@@ -9,6 +9,7 @@
             </header>
             <footer>
                 <button @click="login">登录</button>
+                <router-link :to="'register'">去注册</router-link>
             </footer>
         </div>    
     </main>
@@ -31,10 +32,23 @@ export default {
             if(true){
                 this.$router.push('/home')
             }
+            this.$http.get(this.HTTP + '/query').then(
+                response => {
+                    console.log('成功')
+                    //console.log(response)
+                }, response => {
+                    console.log('失败')
+                    //console.log(response)
+                }
+            )
         },
         sss: function(val){
             alert(val)
         }
+    },
+    mounted(){
+
+
     }
 
 }

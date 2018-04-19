@@ -1,6 +1,9 @@
 <template>
 <div>
-    <header>后台管理系统，登录人：{{name}}<a @click="userOut" >退出</a></header>
+    <header>
+        后台管理系统，登录人：{{name}}<a @click="userOut" >退出</a>
+        <button @click="$store.commit('footer_change','xirong')">控制footer改变</button>
+    </header>
 </div>
 </template>
 
@@ -22,6 +25,7 @@ export default {
     methods:{
         userOut:function(){
             sessionStorage.removeItem('user')
+            this.$router.push('/login')
             //this.$emit('fun',this.massage)
         }
     },

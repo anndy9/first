@@ -3,9 +3,12 @@
         <main-header v-on:fun="home"></main-header>
         <main>
             <nav>
-                0000
+                <span @click="$store.commit('switch_dialog')">0000</span>
+                <img src="https://bpic.588ku.com/original_pic/18/03/23/63b2a086bee058ec2168d215334b38c5.jpg" alt="">
+                <img src="https://bpic.588ku.com/original_pic/17/10/16/87662cb86ea2bfd61809543993add0b0.jpg" alt="">
+                <div id="demo"></div>
             </nav>
-            <router-view/>
+            <router-view />
         </main>
         <main-footer></main-footer>
     </div>
@@ -30,6 +33,18 @@ export default {
             console.log('我是home中的方法')
             console.log(massage)
         }
+    },
+    mounted(){
+        let imgs = document.getElementsByTagName('img');
+
+        let imgs2 = new Image();
+        imgs2.src = 'https://bpic.588ku.com/original_pic/18/04/11/d7f83f54e28ab70dc6c9b824df2bfd7e.jpg';
+        
+        //document.getElementById('demo').innerHTML=imgs[0];
+        //document.getElementById('demo').innerHTML=imgs2;
+        document.getElementById('demo').appendChild(imgs2);
+        console.log(imgs[0])
+
     },
     watch: {
         '$route' (to, from) {

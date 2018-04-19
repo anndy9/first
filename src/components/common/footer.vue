@@ -1,6 +1,9 @@
 <template>
 <div>
-    <footer>我是页脚<button @click="ddd">测试中央总线</button></footer>
+    <footer>
+        <button @click="ddd">测试中央总线</button>
+        {{sss}}{{$store.state.footer.name}}
+    </footer>
 </div>  
 </template>
 
@@ -13,6 +16,18 @@ export default {
         },
         ddd: () =>{
             bus.$emit('selected','这是我传递过来的数据')
+        }
+    },
+    computed:{
+        sss:function(){
+            
+            if(this.$store.state.footer.show >= 5){
+                return '已经是第五次了'
+            }
+
+            return this.$store.state.footer.show
+
+             
         }
     }
 }

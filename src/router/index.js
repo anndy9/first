@@ -11,8 +11,12 @@ var router = new Router({
       component: () => import('../components/login')
     },
     {
+      path: '/register',
+      name: 'register',
+      component: () => import('../components/register'),
+    },
+    {
       path: '/home',
-      name: 'home',
       component: () => import('../components/home'),
       children:[
         {
@@ -27,7 +31,7 @@ var router = new Router({
 router.beforeEach((to, from, next) => {
   let login = JSON.parse(sessionStorage.getItem('user'));
   if(!login){
-    if(to.name == 'login'){
+    if(to.name == 'login' || to.name == 'register'){
       next()
     }else{
       next('/login')
