@@ -30,7 +30,7 @@ export default {
     },
     methods:{
         home: function(massage){
-            console.log('我是home中的方法')
+            console.log('我是home中的方 法')
             console.log(massage)
         }
     },
